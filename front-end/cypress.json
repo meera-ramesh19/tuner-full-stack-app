@@ -1,0 +1,9 @@
+{
+  "cypress-watch-and-reload": {
+    "watch": "src/**/*.js"
+  },
+  "env": {
+    "URL": "http://localhost:3345",
+    "API": "http://localhost:9000"
+  }
+}

@@ -102,7 +102,7 @@ Make a link to the edit form on the show page
 
 - Style the app
   - Look into the [holy grail layout](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
-- It's annoying to have to use the edit form in order to update whether a song `is_favorite` or not. Make the start clickable from the Index page to toggle the value (both front and back end)
+- It's annoying to have to use the edit form in order to update whether a song `is_favorite` or not. Make the star ⭐️ clickable from the Index page to toggle the value (both front and back end)
 - Use react-bootstrap
 - Use react-transition-group to transition between pages [Demo](https://reactrouter.com/web/example/animated-transitions)
 - write your own tests

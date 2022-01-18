@@ -19,4 +19,9 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+
+  // Add env variable CI (equal to true) that is in process.env obj in circleci
+  // to Cypress.env
+  config.env.ci = process.env.CI;
+  return config;
+};

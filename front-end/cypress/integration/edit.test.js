@@ -1,14 +1,11 @@
 const URL = Cypress.env("URL");
 const API = Cypress.env("API");
 
+let id = 0;
+
 describe("The New page", () => {
   before(() => {
     cy.visit(`${URL}/songs/new`);
-  });
-
-  it("shows the header text", () => {
-    cy.contains("Song");
-    cy.contains("New");
   });
 
   describe("the form", () => {

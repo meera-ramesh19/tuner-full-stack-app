@@ -1,36 +1,31 @@
-const url = "http://localhost:3000";
+// From cypress.json env
+const URL = Cypress.env("URL");
+// Already set to true as default on circleci
+// importing this value through plugins/index.js
+const CI_ENV = Cypress.env("ci");
 
-describe("index page", () => {
+describe("Index page", () => {
   before(() => {
-    cy.visit(`${url}/songs`);
+    cy.visit(`${URL}/songs`);
   });
 
-  it("can load index page and has navigation to New page", () => {
+  it("Has a link to each song's show page", () => {
+    const regex = /songs\/(\d+)/;
+    cy.get(".Song a").each(($item) => {
+      cy.wrap($item).invoke("attr", "href").should("match", regex);
+    });
+  });
+
+  it("Has the correct properties displayed", () => {
+    cy.get(".Song td").contains("Fame");
+    cy.get(".Songs td").contains("David Bowie");
+    cy.get(".Songs td").contains("4:12");
+    cy.get(".Songs td").contains("⭐️");
+  });
+
+  it("Can load index page and has navigation to New page", () => {
     cy.get("a").contains("New Song").should("have.attr", "href", `/songs/new`);
   });
-
-  // it("has list snack cards that are coming from the back-end seed data", () => {
-  //   cy.contains("h4", "Strawberries");
-  //   cy.contains("h4", "Healthy Birthday Cake Square");
-  // });
-
-  // it("has a link to each snack's show page", () => {
-  //   const regex = /songs\/(\d+)/;
-  //   cy.get(".Snack a").each(($item) => {
-  //     cy.wrap($item).invoke("attr", "href").should("match", regex);
-  //   });
-  // });
-
-  // it("has a solid heart, if the snack is healthy", () => {
-  //   cy.contains("Strawberries")
-  //     .find("h4 img")
-  //     .should("have.attr", "alt", "healthy food");
-  // });
-  // it("has a heart outline, if the snack is unhealthy", () => {
-  //   cy.contains("Healthy Birthday Cake Square")
-  //     .find("h4 img")
-  //     .should("have.attr", "alt", "unhealthy food");
-  // });
 });
 
 // CSS testing

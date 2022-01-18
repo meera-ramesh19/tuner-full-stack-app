@@ -45,7 +45,7 @@ Your page should
 
 ### `/songs/:index`
 
-- Displays the details of each log
+- Displays the details of each song
   - name
   - artist
   - album
@@ -55,7 +55,6 @@ Your page should
   - <kbd>back</kbd>, takes the user back to the `/songs` view
   - <kbd>delete</kbd>, deletes the log and takes the user back to the `/songs` view
 
-**BONUS**
 
 - button for `edit` - which takes the user to the edit form for this song
 
@@ -81,7 +80,13 @@ Your page should
 
 </details>
 
-### Bonuses
+## Delete Functionality
+
+Make this functionality available on the show page
+
+## Edit Functionality
+
+Make a link to the edit form on the show page
 
 - Add an edit route `/songs/:id/edit`
 - Add an edit form that is pre-filled with the log to edit
@@ -92,10 +97,14 @@ Your page should
 
 </details>
 
+
+### Bonuses
+
 - Style the app
   - Look into the [holy grail layout](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
+- It's annoying to have to use the edit form in order to update whether a song `is_favorite` or not. Make the star ⭐️ clickable from the Index page to toggle the value (both front and back end)
 - Use react-bootstrap
 - Use react-transition-group to transition between pages [Demo](https://reactrouter.com/web/example/animated-transitions)
-- write your own tests
+- write your own tests addtional tests for any new features you implement
 - add a 404 page
 - add functionality that when a user presses the delete button a confirmation appears first

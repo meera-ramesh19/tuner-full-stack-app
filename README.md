@@ -38,8 +38,8 @@ If you feel like you are falling behind, reach out to an instructor.
 
 Build a schema for Postgres in a `schema.sql` file with the following columns/data types:
 
-- name string
-- artist: string
+- name string, required
+- artist: string, required
 - album: string
 - time: string
 - is_favorite: boolean

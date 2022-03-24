@@ -6,7 +6,7 @@ My self-assessed completion score is \_\_\_\_
 
 5: I did everything required and attempted at least one bonus
 
-4: I attempted all parts of the lab and completed most of them the required parts of the assignment
+4: I attempted all parts of the lab and completed most/all of the required parts of the assignment
 
 3: I was able to attempt most parts of the lab and got some of the required parts done
 

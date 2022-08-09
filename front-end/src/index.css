@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+nav {
+  background: #d1a4fa;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 1em;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #4442a5;
+}
+
+h4 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+table {
+  width: 50%;
+  margin: auto;
+}
+
+td {
+  text-align: center;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+  background: #00beb2;
+}
+tbody tr:nth-child(odd) {
+  background:  #54cda4;
+}
+.New {
+  /* border: 1px solid gold;
+    margin: auto;
+    width: 95%; */
+}
+
+.New form {
+  margin: auto;
+  width: 95%;
+}
+
+input[type],
+textarea {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+input[type='checkbox'] {
+  margin: 0;
+  width: 15%;
+}
+
+input[type='submit'] {
+  width: 30%;
+}
+
+.showNavigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding:4rem 0;
+}
+
+.tunerBox {
+  padding: 4rem 0;
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /* -webkit-box-shadow: 10px 10px 127px -7px rgba(220, 179, 179, 0.42);
+-moz-box-shadow: 10px 10px 127px -7px rgba(225, 197, 237, 0.42);
+box-shadow: 10px 10px 127px -7px rgba(220, 198, 232, 0.42); */
+}
+.Song-Details{
+  text-align:center;
+  margin:5rem 0;
+}

@@ -3,7 +3,7 @@ import Songs from '../Components/Songs';
 const Index = () => {
   return (
     <div className='Index'>
-      <h2>Index</h2>
+      {/* <h2>Index</h2> */}
       <Songs />
     </div>
   );

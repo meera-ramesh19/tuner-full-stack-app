@@ -27,7 +27,7 @@ const check_is_favorite = async (favorite) => {
         'SELECT * FROM songs WHERE is_favorite=false'
       );
       return isFavOrNot;
-    } else if (favorite === 'true') {
+    } else if(favorite==='true'){
       const isFavOrNot = await db.any(
         'SELECT * FROM songs WHERE is_favorite=true'
       );
@@ -57,15 +57,15 @@ const getASong = async (id) => {
   }
 };
 
-const createNewSongs = async ({
+const createSongs = async ({
   name,
   artist,
   album,
   time,
-  is_favorite,
-  ...otherStuff
+  is_favorite
+
 }) => {
-  console.log(otherStuff);
+ 
   try {
     const newSong = await db.one(
       'INSERT INTO songs(name, artist, album, time, is_favorite) VALUES($1, $2, $3, $4, $5) RETURNING *',
@@ -79,21 +79,21 @@ const createNewSongs = async ({
 
 const deleteSong = async (id) => {
   try {
-    const song = await db.one('DELETE FROM songs WHERE id=$1 RETURNING *', id);
-    return song;
+    const oneSong = await db.one('DELETE FROM songs WHERE id=$1 RETURNING *', id);
+    return oneSong;
   } catch (error) {
     console.log(error.message || error);
     return error;
   }
 };
 
-const updateSong = async ({ name, artist, album, time, is_favorite }, id) => {
+const updateSong = async (id,{ name, artist, album, time, is_favorite }) => {
   try {
-    const song = await db.one(
+    const updateSong = await db.one(
       'UPDATE songs SET name=$1, artist=$2, album=$3, time=$4, is_favorite=$5 WHERE id=$6 RETURNING *',
       [name, artist, album, time, is_favorite, id]
     );
-    return song;
+    return updateSong;
   } catch (err) {
     return err;
   }
@@ -102,70 +102,9 @@ const updateSong = async ({ name, artist, album, time, is_favorite }, id) => {
 module.exports = {
   getAllSongs,
   getASong,
-  createNewSongs,
+  createSongs,
   deleteSong,
   updateSong,
   orderBy,
-  check_is_favorite,
+  check_is_favorite
 };
-
-// const db = require('../db/dbConfig');
-
-// const getAllSongs = async () => {
-//   try {
-//     const songs = await db.any('SELECT * FROM songs');
-//     return songs;
-//   } catch (error) {
-//     return error;
-//   }
-// };
-
-// const getASong = async (id) => {
-//   try {
-//     const song = await db.one('SELECT * FROM songs WHERE id=$1', id);
-//     return song;
-//   } catch (err) {
-//     return err;
-//   }
-// };
-
-// const createNewSongs = async ({ name, artist, album, time, is_favorite }) => {
-//   try {
-//     const song = await db.one(
-//       'INSERT INTO songs(name, artist, album, time, is_favorite) VALUES($1, $2, $3, $4, $5) RETURNING *',
-//       [name, artist, album, time, is_favorite]
-//     );
-//     return song;
-//   } catch (err) {
-//     return err;
-//   }
-// };
-
-// const deleteSong = async (id) => {
-//   try {
-//     const song = await db.one('DELETE FROM songs WHERE id=$1 RETURNING *', id);
-//     return song;
-//   } catch (err) {
-//     return err;
-//   }
-// };
-
-// const updateSong = async ({ name, artist, album, time, is_favorite }, id) => {
-//   try {
-//     const song = await db.one(
-//       'UPDATE songs SET name=$1, artist=$2, album=$3, time=$4, is_favorite=$5 WHERE id=$6 RETURNING *',
-//       [name, artist, album, time, is_favorite, id]
-//     );
-//     return song;
-//   } catch (err) {
-//     return err;
-//   }
-// };
-
-// module.exports = {
-//   getAllSongs,
-//   getASong,
-//   createNewSongs,
-//   deleteSong,
-//   updateSong,
-// };
